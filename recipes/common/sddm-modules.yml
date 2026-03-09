@@ -19,6 +19,3 @@ modules:
     system:
       enabled:
         - sddm-boot.service
-    user:
-      enabled:
-        - syncthing.service
