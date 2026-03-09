@@ -1,0 +1,180 @@
+modules:
+  - type: containerfile
+    snippets:
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /rpms /tmp/rpms
+      - COPY --from=ghcr.io/ublue-os/akmods:main-43 /kernel-rpms /tmp/rpms/kernel
+      - RUN find /tmp/rpms
+      - RUN rpm -q ublue-os-akmods-addons || dnf install -y /tmp/rpms/ublue-os/ublue-os-akmods-addons*.rpm
+  - type: script
+    scripts:
+      - installsignedkernel.sh
+
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        - just
+        - powerstat
+
+  - type: dnf
+    repos:
+      files:
+        - https://copr.fedorainfracloud.org/coprs/ublue-os/packages/repo/fedora-%OS_VERSION%/ublue-os-packages-fedora-%OS_VERSION%.repo
+    install:
+      install-weak-deps: false
+      packages:
+        - ublue-os-udev-rules
+        - ublue-os-update-services
+        - ublue-os-signing
+        - ublue-os-luks
+        - ublue-os-just
+
+  - type: script
+    scripts:
+      - installandroidudev.sh
+      - ensureautoupdates.sh
+
+  - type: dnf
+    repos:
+      files:
+        - terra.repo
+        - code.repo
+    install:
+      install-weak-deps: false
+      packages:
+        # terminal tools
+        - ghostty
+        - fish
+        - starship
+        - zoxide
+        - yazi
+        - zathura
+        - zathura-plugins-all
+        - lsd
+        - fzf
+        - bat
+        - neovim
+        - ripgrep
+        - fd
+        - gdu
+        - htop
+
+        # code
+        - code
+        - zed
+
+        # launcher
+        - rofi
+        - rofimoji
+
+        # environment
+        - tuned-ppd
+        - syncthing
+        - xorg-x11-server-Xwayland
+        - headsetcontrol
+        - mediainfo
+        - fprintd-pam
+        - xdg-user-dirs
+        - dbus-tools
+        - dbus-daemon
+        - wl-clipboard
+        - pavucontrol
+        - playerctl
+        - qt5-qtwayland
+        - qt6-qtwayland
+        - vulkan-validation-layers
+        - vulkan-tools
+        - google-noto-emoji-fonts
+        - gnome-disk-utility
+        - ddcutil
+        - openssl
+        - vim
+        - just
+        - alsa-firmware
+        - p7zip
+        - distrobox
+        - steam-devices
+        - adw-gtk3-theme
+        - mpv
+
+        # sound
+        - wireplumber
+        - pipewire
+        - pamixer
+        - pulseaudio-utils
+
+        # networking
+        - network-manager-applet
+        - NetworkManager-openvpn
+        - NetworkManager-openvpn-gnome
+        - NetworkManager-openconnect
+        - NetworkManager-openconnect-gnome
+        - bluez
+        - bluez-tools
+        - blueman
+        - firewall-config
+
+        # file manager
+        - thunar
+        - thunar-archive-plugin
+        - thunar-volman
+        - xarchiver
+        - imv
+        - p7zip
+        - gvfs-mtp
+        - gvfs-gphoto2
+        - gvfs-smb
+        - gvfs-nfs
+        - gvfs-fuse
+        - gvfs-archive
+        - android-tools
+
+        # theme and GUI
+        - fontawesome-fonts-all
+        - gnome-themes-extra
+        - gnome-icon-theme
+        - paper-icon-theme
+        - breeze-icon-theme
+        - papirus-icon-theme
+    replace:
+      - from-repo: fedora
+        packages:
+          - old: OpenCL-ICD-Loader
+            new: ocl-icd
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+
+  - from-file: common/proprietary-modules.yml
+
+  - type: script
+    scripts:
+      - installrpmfusion.sh
+      - removeunusedrepos.sh
+
+  - type: files
+    files:
+      - source: system/usr
+        destination: /usr
+      - source: system/etc
+        destination: /etc
+
+  - type: gschema-overrides
+    include:
+      - gtk-theming.gschema.override
+
+  - type: brew
+    auto-upgrade: true
+
+  - type: script
+    scripts:
+      - addbrewjustimport.sh
+
+  - type: script
+    scripts:
+      - brewpackages.sh
+
+  - type: chezmoi
+    repository: "https://github.com/zizouhuweidi/dotfiles"
+    disable-update: true

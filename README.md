@@ -1,6 +1,6 @@
-# ZizouOS
+# zen
 
-my own personal OS image using bootc and blue-build
+my personal OS image focused on a clean and minimal dev and general use setup. built using blue-build (bootc)
 
 ## Installation
 

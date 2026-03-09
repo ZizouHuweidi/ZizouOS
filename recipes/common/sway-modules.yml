@@ -1,0 +1,23 @@
+modules:
+  - type: dnf
+    install:
+      install-weak-deps: false
+      packages:
+        - foot
+        - swaylock
+        - swayidle
+        - slurp
+        - grim
+        - wlr-randr
+        - wlsunset
+        - brightnessctl
+        - kanshi
+        - polkit
+        - xfce-polkit
+        - dunst
+        - wl-mirror
+        - wdisplays
+        - cliphist
+        - gammastep
+        - gammastep-indicator
+        - nwg-look
