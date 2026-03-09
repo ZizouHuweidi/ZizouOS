@@ -178,3 +178,36 @@ modules:
   - type: chezmoi
     repository: "https://github.com/zizouhuweidi/dotfiles"
     disable-update: true
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          - com.github.tchx84.Flatseal
+          - com.google.Chrome
+          - com.ranfdev.DistroShelf
+          - com.transmissionbt.Transmission
+          - io.github.kolunmi.Bazaar
+          - md.obsidian.Obsidian
+          - it.mijorus.gearlever
+          - org.telegram.desktop
+          - org.gtk.Gtk3theme.Adwaita-dark
+          - org.gtk.Gtk3theme.adw-gtk3
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+      - scope: user
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+        - Hack
+        - Iosevka
+        - SourceCodePro
+        - Terminus
+        - JetBrainsMono
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - Roboto
+        - Open Sans
+        - Inter
