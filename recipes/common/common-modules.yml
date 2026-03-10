@@ -113,6 +113,8 @@ modules:
         - bluez-tools
         - blueman
         - firewall-config
+        - net-tools
+        - kde-connect
 
         # file manager
         - thunar
@@ -145,6 +147,10 @@ modules:
       packages:
         - firefox
         - firefox-langpacks
+    group-install:
+      with-optional: true
+      packages:
+        - virtualization
 
   - from-file: common/proprietary-modules.yml
 

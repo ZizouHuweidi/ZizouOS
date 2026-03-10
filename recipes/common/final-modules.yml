@@ -3,8 +3,3 @@ modules:
     scripts:
       - removeunusedrepos.sh
       - regenerateinitramfs.sh
-
-  - type: systemd
-    user:
-      enabled:
-        - syncthing.service
