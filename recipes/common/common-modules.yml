@@ -15,6 +15,7 @@ modules:
       packages:
         - just
         - powerstat
+        - cmus
 
   - type: dnf
     repos:
@@ -96,7 +97,6 @@ modules:
         - steam-devices
         - adw-gtk3-theme
         - mpv
-        - cmus
 
         # sound
         - wireplumber
