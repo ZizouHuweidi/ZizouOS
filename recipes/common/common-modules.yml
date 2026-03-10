@@ -15,7 +15,6 @@ modules:
       packages:
         - just
         - powerstat
-        - cmus
 
   - type: dnf
     repos:
@@ -195,6 +194,7 @@ modules:
           - md.obsidian.Obsidian
           - it.mijorus.gearlever
           - org.telegram.desktop
+          - com.github.taiko2k.tauonmb
           - org.gtk.Gtk3theme.Adwaita-dark
           - org.gtk.Gtk3theme.adw-gtk3
           - org.gtk.Gtk3theme.adw-gtk3-dark
