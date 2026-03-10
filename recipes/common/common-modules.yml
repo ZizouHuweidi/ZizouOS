@@ -171,10 +171,6 @@ modules:
     scripts:
       - addbrewjustimport.sh
 
-  - type: script
-    scripts:
-      - brewpackages.sh
-
   - type: chezmoi
     repository: "https://github.com/zizouhuweidi/dotfiles"
     disable-update: true
