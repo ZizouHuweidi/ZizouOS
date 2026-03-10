@@ -96,6 +96,7 @@ modules:
         - steam-devices
         - adw-gtk3-theme
         - mpv
+        - cmus
 
         # sound
         - wireplumber
