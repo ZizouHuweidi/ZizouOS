@@ -188,6 +188,7 @@ modules:
           - io.github.kolunmi.Bazaar
           - md.obsidian.Obsidian
           - it.mijorus.gearlever
+          - com.bitwarden.desktop
           - org.gtk.Gtk3theme.Adwaita-dark
           - org.gtk.Gtk3theme.adw-gtk3
           - org.gtk.Gtk3theme.adw-gtk3-dark
