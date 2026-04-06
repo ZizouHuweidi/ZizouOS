@@ -10,6 +10,7 @@ modules:
   - from-file: common/sddm-modules.yml
   - from-file: common/common-modules.yml
   - from-file: common/nvidia-open-modules.yml
+  - from-file: common/gaming-modules.yml
   - from-file: common/sway-modules.yml
   - type: script
     scripts:
