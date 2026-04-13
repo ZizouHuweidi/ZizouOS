@@ -131,6 +131,7 @@ modules:
 
         # theme and GUI
         - fontawesome-fonts-all
+        - gnome-themes-extra
         - gnome-icon-theme
         - paper-icon-theme
         - papirus-icon-theme
