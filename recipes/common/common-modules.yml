@@ -52,7 +52,6 @@ modules:
         - lsd
         - fzf
         - bat
-        - broot
         - neovim
         - ripgrep
         - fd
