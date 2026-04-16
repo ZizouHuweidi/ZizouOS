@@ -1,11 +1,8 @@
 # zen
 
-my personal OS image focused on a clean and minimal dev and general use setup. built using blue-build (bootc)
+bootc images focused on a clean dev and general use setup. both cosmic and sway images are available (nvidia images too).
 
 ## Installation
-
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 To rebase an existing atomic Fedora installation to the latest build:
 
@@ -14,6 +11,8 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/zizouhuweidi/zen:latest
   ```
+
+  other images available: zen-nvidia, zen-sway and zen-sway-nvidia
 
 - Reboot to complete the rebase:
 

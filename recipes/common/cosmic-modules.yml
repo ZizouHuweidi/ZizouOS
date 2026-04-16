@@ -1,0 +1,6 @@
+modules:
+  - type: dnf
+    group-install:
+      with-optional: true
+      packages:
+        - cosmic-desktop-environment

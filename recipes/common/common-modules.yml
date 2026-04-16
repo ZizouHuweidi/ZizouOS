@@ -61,10 +61,6 @@ modules:
         - code
         - zed
 
-        # launcher
-        - rofi
-        - rofimoji
-
         # environment
         - tuned-ppd
         - syncthing
@@ -75,7 +71,6 @@ modules:
         - xdg-user-dirs
         - dbus-tools
         - dbus-daemon
-        - wl-clipboard
         - pavucontrol
         - playerctl
         - qt5-qtwayland
@@ -102,22 +97,14 @@ modules:
         - pulseaudio-utils
 
         # networking
-        - network-manager-applet
         - NetworkManager-openvpn
         - NetworkManager-openvpn-gnome
         - NetworkManager-openconnect
         - NetworkManager-openconnect-gnome
-        - bluez
-        - bluez-tools
-        - blueman
         - firewall-config
         - net-tools
         - kde-connect
 
-        # file manager
-        - thunar
-        - thunar-archive-plugin
-        - thunar-volman
         - xarchiver
         - imv
         - p7zip
@@ -155,13 +142,6 @@ modules:
     scripts:
       - installrpmfusion.sh
       - removeunusedrepos.sh
-
-  - type: files
-    files:
-      - source: system/usr
-        destination: /usr
-      - source: system/etc
-        destination: /etc
 
   - type: gschema-overrides
     include:

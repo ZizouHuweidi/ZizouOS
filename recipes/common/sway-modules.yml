@@ -18,7 +18,24 @@ modules:
         - wl-mirror
         - wdisplays
         - cliphist
+        - wl-clipboard
+        - rofi
+        - rofimoji
         - gammastep
+        - thunar
+        - network-manager-applet
+        - bluez
+        - bluez-tools
+        - blueman
+        - thunar-archive-plugin
+        - thunar-volman
         - gammastep-indicator
         - tesseract
         - swappy
+
+  - type: files
+    files:
+      - source: system/usr
+        destination: /usr
+      - source: system/etc
+        destination: /etc

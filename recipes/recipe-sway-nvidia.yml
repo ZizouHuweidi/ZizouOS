@@ -1,15 +1,20 @@
 name: zen-nvidia
 
-description: my personal OS image focused on a clean and minimal dev and general use setup (nvidia version)
+description: my personal OS image focused on a clean and minimal dev and general use setup (sway nvidia version)
 
 base-image: quay.io/fedora-ostree-desktops/sway-atomic
 
 image-version: 43
 
 modules:
+  - from-file: common/sddm-modules.yml
   - from-file: common/common-modules.yml
   - from-file: common/nvidia-open-modules.yml
   - from-file: common/gaming-modules.yml
+  - from-file: common/sway-modules.yml
+  - type: script
+    scripts:
+      - setswaynvidiaenvironment.sh
   - from-file: common/final-modules.yml
 
   - type: signing
