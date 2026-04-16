@@ -1,6 +1,6 @@
 # zen
 
-bootc images focused on a clean dev and general use setup. both cosmic and sway images are available (nvidia images too).
+bootc images focused on a clean dev and general use setup. both sway and cosmic images are available (nvidia versions of each too).
 
 ## Installation
 
@@ -12,7 +12,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/zizouhuweidi/zen:latest
   ```
 
-  other images available: zen-nvidia, zen-sway and zen-sway-nvidia
+  other images available: zen-nvidia, zen-cosmic and zen-cosmic-nvidia
 
 - Reboot to complete the rebase:
 
