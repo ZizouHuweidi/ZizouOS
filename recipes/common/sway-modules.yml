@@ -33,6 +33,7 @@ modules:
         - gammastep-indicator
         - tesseract
         - swappy
+        - wayvnc
 
   - type: files
     files:
