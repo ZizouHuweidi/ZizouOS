@@ -40,7 +40,7 @@ modules:
         - terra.repo
         - code.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        - https://brave-browser-rpm-nightly.s3.brave.com/brave-browser-nightly.repo
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       install-weak-deps: false
       packages:
@@ -60,8 +60,7 @@ modules:
         - podman-docker
         - podman-tui
         - tailscale
-
-        - brave-origin-nightly
+        - brave-origin
 
         # code
         - code
