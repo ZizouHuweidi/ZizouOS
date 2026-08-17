@@ -39,8 +39,8 @@ modules:
       files:
         - terra.repo
         - code.repo
-        - chatgpt.repo
-        - claude.repo
+        # - chatgpt.repo
+        # - claude.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
@@ -63,8 +63,8 @@ modules:
         - podman-tui
         - tailscale
         - brave-origin
-        - chatgpt
-        - claude-code
+        # - chatgpt
+        # - claude-code
 
         # code
         - code
