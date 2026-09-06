@@ -12,7 +12,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/zizouhuweidi/zen-gnome:latest
   ```
 
-  other images available: zen-gnome-nvidia, zen-sway, zen-sway-nvidia
+  other images available: zen-gnome-nvidia, zen-sway, zen-sway-nvidia, zen-cosmic, zen-cosmic-nvidia
 
 - Reboot to complete the rebase:
 
@@ -32,4 +32,4 @@ To rebase an existing atomic Fedora installation to the latest build:
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in the selected `recipes/recipe-*.yml`, so you won't get accidentally updated to the next major version.

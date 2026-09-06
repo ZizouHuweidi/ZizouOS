@@ -34,12 +34,18 @@ modules:
       - installandroidudev.sh
       - ensureautoupdates.sh
 
+  # Repository verification needs the key before DNF can install ChatGPT.
+  - type: files
+    files:
+      - source: system/etc/pki/rpm-gpg/RPM-GPG-KEY-chatgpt
+        destination: /etc/pki/rpm-gpg/RPM-GPG-KEY-chatgpt
+
   - type: dnf
     repos:
       files:
         - terra.repo
         - code.repo
-        # - chatgpt.repo
+        - chatgpt.repo
         # - claude.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
@@ -63,7 +69,7 @@ modules:
         - podman-tui
         - tailscale
         - brave-origin
-        # - chatgpt
+        - chatgpt
         # - claude-code
 
         # code
